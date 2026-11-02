@@ -1,0 +1,413 @@
+
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Менің сүйікті фильмдерім — фильмдер каталогы">
+    <title>FilmSpace | Менің сүйікті фильмдерім</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <header class="header">
+        <div class="container nav-container">
+            <a href="#home" class="logo">Film<span>Space</span></a>
+
+            <nav class="navigation">
+                <a href="#home">Басты бет</a>
+                <a href="#about">Біз туралы</a>
+                <a href="#movies">Фильмдер</a>
+                <a href="#favorites">Таңдаулылар</a>
+                <a href="#recommendations">Ұсыныстар</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- 1. Басты бет -->
+        <section class="hero" id="home">
+            <div class="container hero-content">
+                <p class="hero-label">WELCOME TO FILMSPACE</p>
+                <h1>Кино әлеміне <span>қош келдіңіз!</span></h1>
+                <p>
+                    Ең қызықты фильмдерді ашыңыз,
+                    сүйіктілеріңізді таңдаңыз және жаңа
+                    туындылармен танысыңыз.
+                </p>
+                <a href="#movies" class="btn">Фильмдерді көру</a>
+            </div>
+        </section>
+
+        <!-- 2. Біз туралы -->
+        <section class="about section" id="about">
+            <div class="container">
+                <h2>Біз туралы</h2>
+                <p class="section-description">
+                    FilmSpace — сүйікті фильмдеріңізді табуға,
+                    олар туралы ақпарат алуға және трейлерлерін
+                    көруге арналған сайт.
+                </p>
+
+                <div class="features">
+                    <div class="feature-card">
+                        <h3>🎬 Фильмдер</h3>
+                        <p>Әртүрлі жанрдағы қызықты фильмдер.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <h3>❤️ Таңдаулылар</h3>
+                        <p>Өзіңізге ұнаған фильмдерді сақтаңыз.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <h3>▶ Трейлерлер</h3>
+                        <p>Фильмдердің трейлерлерін көріңіз.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Фильмдер каталогы -->
+        <section class="movies section" id="movies">
+            <div class="container">
+                <h2>Фильмдер каталогы</h2>
+                <p class="section-description">
+                    Өзіңізге ұнайтын фильмді іздеңіз.
+                </p>
+
+                <div class="filters">
+                    <input
+                        type="text"
+                        id="search"
+                        placeholder="Фильм атауын енгізіңіз..."
+                    >
+
+                    <select id="genreFilter">
+                        <option value="all">Барлық жанрлар</option>
+                        <option value="Анимация">Анимация</option>
+                        <option value="Фэнтези">Фэнтези</option>
+                        <option value="Комедия">Комедия</option>
+                        <option value="Драма">Драма</option>
+                        <option value="Шытырман оқиға">Шытырман оқиға</option>
+                    </select>
+                </div>
+
+                <p id="resultsCount"></p>
+
+                <div class="movie-grid" id="movieGrid">
+
+                    <article class="movie-card"
+                        data-id="1"
+                        data-name="Как приручить дракона"
+                        data-genre="Фэнтези"
+                        data-year="2010"
+                        data-director="Крис Сандерс, Дин ДеБлуа"
+                        data-description="Иккинг есімді жас викинг пен Беззубик атты айдаһардың ерекше достығы туралы оқиға."
+                        data-trailer="">
+
+                        <div class="movie-poster">
+                            <img src="https://image.tmdb.org/t/p/w500/ygGmAO60t8GyqUo9xYeYxSZAR3b.jpg" alt="Как приручить дракона">
+                            <span class="poster-year">2010</span>
+                        </div>
+                        <div class="movie-info">
+                            <span class="movie-genre">Фэнтези</span>
+                            <h3>Как приручить дракона</h3>
+                            <div class="movie-actions">
+                                <button class="details-button">Толығырақ</button>
+                                <button class="favorite" aria-label="Таңдаулыларға қосу">♡</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="movie-card"
+                        data-id="2"
+                        data-name="Чарли и шоколадная фабрика"
+                        data-genre="Фэнтези"
+                        data-year="2005"
+                        data-director="Тим Бёртон"
+                        data-description="Чарли есімді баланың сиқырлы шоколад фабрикасына жасаған қызықты саяхаты."
+                        data-trailer="">
+
+                        <div class="movie-poster">
+                            <img src="https://image.tmdb.org/t/p/w500/iKP6wg3c6COUe8gYutoGG7qcPnO.jpg" alt="Чарли и шоколадная фабрика">
+                            <span class="poster-year">2005</span>
+                        </div>
+                        <div class="movie-info">
+                            <span class="movie-genre">Фэнтези</span>
+                            <h3>Чарли и шоколадная фабрика</h3>
+                            <div class="movie-actions">
+                                <button class="details-button">Толығырақ</button>
+                                <button class="favorite" aria-label="Таңдаулыларға қосу">♡</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="movie-card"
+                        data-id="3"
+                        data-name="Человек-паук: Через вселенные"
+                        data-genre="Анимация"
+                        data-year="2018"
+                        data-director="Боб Персичетти, Питер Рэмзи, Родни Ротман"
+                        data-description="Майлз Моралес жаңа әлемдерге саяхат жасап, басқа өрмекші адамдармен кездеседі."
+                        data-trailer="">
+
+                        <div class="movie-poster">
+                            <img src="https://image.tmdb.org/t/p/w500/iiZZdoQBEYBv6id8su7ImL0oCbD.jpg" alt="Человек-паук: Через вселенные">
+                            <span class="poster-year">2018</span>
+                        </div>
+                        <div class="movie-info">
+                            <span class="movie-genre">Анимация</span>
+                            <h3>Человек-паук: Через вселенные</h3>
+                            <div class="movie-actions">
+                                <button class="details-button">Толығырақ</button>
+                                <button class="favorite" aria-label="Таңдаулыларға қосу">♡</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="movie-card"
+                        data-id="4"
+                        data-name="Рататуй"
+                        data-genre="Комедия"
+                        data-year="2007"
+                        data-director="Брэд Бёрд"
+                        data-description="Реми есімді кішкентай егеуқұйрықтың аспаз болуды армандаған қызықты оқиғасы."
+                        data-trailer="">
+
+                        <div class="movie-poster">
+                            <img src="https://image.tmdb.org/t/p/w500/t3vaWRPSf6WjDSamIkKDs1iQWna.jpg" alt="Рататуй">
+                            <span class="poster-year">2007</span>
+                        </div>
+                        <div class="movie-info">
+                            <span class="movie-genre">Комедия</span>
+                            <h3>Рататуй</h3>
+                            <div class="movie-actions">
+                                <button class="details-button">Толығырақ</button>
+                                <button class="favorite" aria-label="Таңдаулыларға қосу">♡</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="movie-card"
+                        data-id="5"
+                        data-name="Тайна Коко"
+                        data-genre="Анимация"
+                        data-year="2017"
+                        data-director="Ли Анкрич"
+                        data-description="Мигель музыкаға деген сүйіспеншілігі арқылы отбасының тарихын ашады."
+                        data-trailer="">
+
+                        <div class="movie-poster">
+                            <img src="https://image.tmdb.org/t/p/w500/gGEsBPAijhVUFoiNpgZXqRVWJt2.jpg" alt="Тайна Коко">
+                            <span class="poster-year">2017</span>
+                        </div>
+                        <div class="movie-info">
+                            <span class="movie-genre">Анимация</span>
+                            <h3>Тайна Коко</h3>
+                            <div class="movie-actions">
+                                <button class="details-button">Толығырақ</button>
+                                <button class="favorite" aria-label="Таңдаулыларға қосу">♡</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="movie-card"
+                        data-id="6"
+                        data-name="Головоломка"
+                        data-genre="Анимация"
+                        data-year="2015"
+                        data-director="Пит Доктер, Роналдо Дель Кармен"
+                        data-description="Райлидің ішкі сезімдері оның күнделікті өміріне әсер етеді."
+                        data-trailer="">
+
+                        <div class="movie-poster">
+                            <img src="https://image.tmdb.org/t/p/w500/2H1TmgdfNtsKlU9jKdeNyYL5y8T.jpg" alt="Головоломка">
+                            <span class="poster-year">2015</span>
+                        </div>
+                        <div class="movie-info">
+                            <span class="movie-genre">Анимация</span>
+                            <h3>Головоломка</h3>
+                            <div class="movie-actions">
+                                <button class="details-button">Толығырақ</button>
+                                <button class="favorite" aria-label="Таңдаулыларға қосу">♡</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="movie-card"
+                        data-id="7"
+                        data-name="Хроники Нарнии"
+                        data-genre="Фэнтези"
+                        data-year="2005"
+                        data-director="Эндрю Адамсон"
+                        data-description="Төрт баланың сиқырлы Нарния әлеміне жасаған саяхаты."
+                        data-trailer="">
+
+                        <div class="movie-poster">
+                            <img src="https://image.tmdb.org/t/p/w500/iREd0rNCjYdf5Ar0vfaW32yrkm.jpg" alt="Хроники Нарнии">
+                            <span class="poster-year">2005</span>
+                        </div>
+                        <div class="movie-info">
+                            <span class="movie-genre">Фэнтези</span>
+                            <h3>Хроники Нарнии</h3>
+                            <div class="movie-actions">
+                                <button class="details-button">Толығырақ</button>
+                                <button class="favorite" aria-label="Таңдаулыларға қосу">♡</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="movie-card"
+                        data-id="8"
+                        data-name="Зверополис"
+                        data-genre="Комедия"
+                        data-year="2016"
+                        data-director="Байрон Ховард, Рич Мур"
+                        data-description="Қоян Джуди мен түлкі Ник үлкен қаладағы жұмбақ істі бірге зерттейді."
+                        data-trailer="">
+
+                        <div class="movie-poster">
+                            <img src="https://image.tmdb.org/t/p/w500/hlK0e0wAQ3VLuJcsfIYPvb4JVud.jpg" alt="Зверополис">
+                            <span class="poster-year">2016</span>
+                        </div>
+                        <div class="movie-info">
+                            <span class="movie-genre">Комедия</span>
+                            <h3>Зверополис</h3>
+                            <div class="movie-actions">
+                                <button class="details-button">Толығырақ</button>
+                                <button class="favorite" aria-label="Таңдаулыларға қосу">♡</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="movie-card"
+                        data-id="9"
+                        data-name="Малефисента"
+                        data-genre="Фэнтези"
+                        data-year="2014"
+                        data-director="Роберт Стромберг"
+                        data-description="Белгілі ертегінің оқиғасы Малефисентаның көзқарасымен баяндалады."
+                        data-trailer="">
+
+                        <div class="movie-poster">
+                            <img src="https://image.tmdb.org/t/p/w500/bDG3yei6AJlEAK3A5wN7RwFXQ7V.jpg" alt="Малефисента">
+                            <span class="poster-year">2014</span>
+                        </div>
+                        <div class="movie-info">
+                            <span class="movie-genre">Фэнтези</span>
+                            <h3>Малефисента</h3>
+                            <div class="movie-actions">
+                                <button class="details-button">Толығырақ</button>
+                                <button class="favorite" aria-label="Таңдаулыларға қосу">♡</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="movie-card"
+                        data-id="10"
+                        data-name="Холодное сердце"
+                        data-genre="Анимация"
+                        data-year="2013"
+                        data-director="Крис Бак, Дженнифер Ли"
+                        data-description="Анна әпкесі Эльзаны іздеп, сиқырлы қарлы әлемге жол тартады."
+                        data-trailer="">
+
+                        <div class="movie-poster">
+                            <img src="https://image.tmdb.org/t/p/w500/mbPrrbt8bSLcHSBCHnRclPlMZPl.jpg" alt="Холодное сердце">
+                            <span class="poster-year">2013</span>
+                        </div>
+                        <div class="movie-info">
+                            <span class="movie-genre">Анимация</span>
+                            <h3>Холодное сердце</h3>
+                            <div class="movie-actions">
+                                <button class="details-button">Толығырақ</button>
+                                <button class="favorite" aria-label="Таңдаулыларға қосу">♡</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="movie-card"
+                        data-id="11"
+                        data-name="Хатико: Самый верный друг"
+                        data-genre="Драма"
+                        data-year="2009"
+                        data-director="Лассе Халльстрём"
+                        data-description="Хатико атты иттің иесіне деген адалдығы туралы әсерлі оқиға."
+                        data-trailer="">
+
+                        <div class="movie-poster">
+                            <img src="https://image.tmdb.org/t/p/w500/lsy3aEsEfYIHdLRk4dontZ4s85h.jpg" alt="Хатико">
+                            <span class="poster-year">2009</span>
+                        </div>
+                        <div class="movie-info">
+                            <span class="movie-genre">Драма</span>
+                            <h3>Хатико: Самый верный друг</h3>
+                            <div class="movie-actions">
+                                <button class="details-button">Толығырақ</button>
+                                <button class="favorite" aria-label="Таңдаулыларға қосу">♡</button>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+
+                <p id="noResults" hidden>Фильм табылмады.</p>
+            </div>
+        </section>
+
+        <!-- 4. Таңдаулылар -->
+        <section class="favorites section" id="favorites">
+            <div class="container">
+                <h2>Таңдаулы фильмдер</h2>
+                <p class="section-description">
+                    Сіз таңдаған фильмдер осы жерде сақталады.
+                </p>
+                <div class="movie-grid" id="favoriteList">
+                    <p>Әзірге таңдаулы фильмдер жоқ.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Ұсыныстар -->
+        <section class="recommendations section" id="recommendations">
+            <div class="container">
+                <h2>Фильм ұсыныстары</h2>
+                <p class="section-description">
+                    Жанрды таңдаңыз, біз сізге фильм ұсынамыз.
+                </p>
+
+                <select id="recommendGenre">
+                    <option value="all">Кез келген жанр</option>
+                    <option value="Анимация">Анимация</option>
+                    <option value="Фэнтези">Фэнтези</option>
+                    <option value="Комедия">Комедия</option>
+                    <option value="Драма">Драма</option>
+                </select>
+
+                <button id="recommendButton" class="btn">
+                    Маған фильм ұсын
+                </button>
+
+                <div id="recommendResult"></div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Фильм туралы ақпарат терезесі -->
+    <dialog id="movieModal">
+        <button id="closeModal" aria-label="Жабу">×</button>
+        <div id="modalContent"></div>
+    </dialog>
+
+    <footer class="footer">
+        <div class="container">
+            <p>© 2026 FilmSpace. Менің сүйікті фильмдерім.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
